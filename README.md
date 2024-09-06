@@ -1,6 +1,6 @@
-# TIL
+# TIL_Walking
 
-C# TIL을 업로드 하는 공간입니다.
+C# TIL 걷기반 퀘스트를 업로드 하는 공간입니다.
 
 <details>
 <summary>:clock7: 1. 데이터 다루기 실습 </summary>
