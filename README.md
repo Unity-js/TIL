@@ -3,7 +3,7 @@
 C# TIL을 업로드 하는 공간입니다.
 
 <details>
-<summary>1. 데이터 다루기 실습 </summary>
+<summary>:clock7: 1. 데이터 다루기 실습 </summary>
 
   ```C++
 // 1. 변수 만들기
@@ -53,7 +53,7 @@ parse 의 경우 String형에서 사용 가능
 
 </details>
 <details>
-<summary>2. 연산자 실습 </summary>
+<summary>:heavy_plus_sign: 2. 연산자 실습 </summary>
 
 ```C++
 // 1. 숫자의 사칙연산
@@ -97,7 +97,7 @@ Console.WriteLine($"{result_1}, {result_2}, {result_3}, {result_4}");
 
 </details>
 <details>
-<summary>3. 본격 프로그래밍 시작해보기 </summary>
+<summary>:notes: 3. 본격 프로그래밍 시작해보기 </summary>
 
 ```C++
 // 1. 입력받은 데이터가 숫자인지 문자열인지 판단
@@ -202,3 +202,147 @@ else if 에 비해 case 의 경우 조건식을 전부 계산하지 않기 때�
 * 위에 "숫자" 는 정수에 한정해서 작성했습니다, 소수가 입력 되었을 때에도 문자가 아닌 숫자로 판단할 수 있게 더 공부 해야 할 것 같습니다.
 
 </details>
+
+<details>
+<summary>:1234: 4. 숫자..인가요? </summary>
+
+```C++
+// 1. 숫자를 두번 입력받아서 두번 다 숫자인지 확인
+
+Console.WriteLine("첫번째 수를 입력해 주세요.");
+
+string input1 = Console.ReadLine();
+int num1;
+bool logic = int.TryParse(input1, out num1);
+
+Console.WriteLine("두번째 수를 입력해 주세요.");
+
+string input2 = Console.ReadLine();
+int num2;
+bool logic2 = int.TryParse(input2, out num2);
+
+if (logic && logic2)
+{
+    Console.WriteLine("두 데이터는 모두 숫자입니다.");
+}
+else
+{
+    Console.WriteLine("숫자가 아닙니다.");
+}
+
+// 2.숫자를 두번 입력받아서 두번 다 숫자인지 하나만 숫자인지 확인
+
+Console.WriteLine("첫번째 수를 입력해 주세요.");
+
+string input3 = Console.ReadLine();
+int num3;
+bool logic3 = int.TryParse(input3, out num3);
+
+Console.WriteLine("두번째 수를 입력해 주세요.");
+
+string input4 = Console.ReadLine();
+int num4;
+bool logic4 = int.TryParse(input4, out num4);
+
+if (logic3 && logic4)
+{
+    Console.WriteLine("두 데이터는 모두 숫자입니다.");
+}
+else if (logic3 ^ logic4)
+{
+    Console.WriteLine("하나의 데이터만 숫자입니다.");
+}
+else
+{
+    Console.WriteLine("두 데이터 모두 숫자가 아닙니다.");
+}
+
+// 3. 숫자를 두번 입력받아서 두 수를 비교
+
+Console.WriteLine("첫번째 수를 입력해 주세요.");
+
+string input5 = Console.ReadLine();
+int num5;
+bool logic5 = int.TryParse(input5, out num5);
+
+Console.WriteLine("두번째 수를 입력해 주세요.");
+
+string input6 = Console.ReadLine();
+int num6;
+bool logic6 = int.TryParse(input6, out num6);
+
+if (logic5 && logic6)
+{
+    if (num5 == num6)
+    {
+        Console.WriteLine(num5 + "은(는) " + num6 + "같습니다.");
+    }
+    else if (num5 > num6)
+    {
+        Console.WriteLine(num5 + "은(는) " + num6 + "보다 큽니다.");
+    }
+    else
+    {
+        Console.WriteLine(num5 + "은(는) " + num6 + "보다 작습니다.");
+    }
+}
+else
+{
+    Console.WriteLine("두 개의 숫자를 입력해주세요.");
+}
+```
+# 오늘 내용 중 기억해야 할 것
+
+논리, 비트 연산자를 사용하는 방법, 어떨때 써야하는지 알게 되었습니다.
+
+OR (|) 연산은 AND 연산과 반대되는 연산으로 1이 하나라도 있으면 1을 반환합니다.
+
+XOR (^) 연산은 연산을 하는 두개의 비트가 서로 다른 경우에 1을 반환합니다.
+
+</details>
+
+<details>
+<summary>:checkered_flag: 5. 대한민국의 수도는? </summary>
+
+```C++
+Console.WriteLine("Q. 대한민국의 수도는 어디인가요? 1.인천   2.평창   3.서울   4.부산");
+
+string input = Console.ReadLine();
+
+int[] select = { 1, 2, 3, 4 };
+
+int a;
+
+bool logic = int.TryParse(input, out a);
+
+var checking = Array.Exists(select, x => x == a);
+
+if (!logic)
+{
+    Console.WriteLine("숫자가 아닙니다");
+}
+else if (checking == true)
+{
+    if (a == 3)
+    {
+        Console.WriteLine("정답입니다!");
+    }
+    else
+    {
+        Console.WriteLine("오답입니다!");
+    }
+}
+else
+{
+    Console.WriteLine("1 ~ 4의 숫자를 입력해주세요.");
+}
+```
+
+# 오늘 내용 중 기억해야 할 것
+
+작성하고 나서 해설을 보니 연산자만으로도 충분히 깔끔하게 구현이 되는걸 알았습니다. 
+
+예제를 보고 비교 연산자, 논리 연산자를 한 if 조건 구문에 다 넣어도 된다는 것을 배웠습니다.
+
+</details>
+
