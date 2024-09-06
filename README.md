@@ -346,3 +346,103 @@ else
 
 </details>
 
+<details>
+<summary>:palm_tree: 6. 여행을 떠나요 </summary>
+
+```C++
+
+Console.WriteLine("어디로 여행을 가고 싶나요?");
+Console.WriteLine("1.제주도   2.코타키나발루   3.싱가포르   4.태국");
+
+String input = Console.ReadLine();
+
+int a;
+
+bool logic = int.TryParse(input, out a);
+
+if (logic)
+{
+    switch (a)
+    {
+        case 1:
+            Console.WriteLine("제주도는 한국의 섬으로 비교적 방문이 쉽고 다양한 놀거리 / 먹거리가 준비되어 있습니다.");
+            break;
+
+        case 2:
+            Console.WriteLine("코타키나발루는 말레이시아 사바주의 주도로, 말레이시아 동부 보르네오섬 최대의 도시입니다.");
+            break;
+
+        case 3:
+            Console.WriteLine("싱가포르는 동남아시아, 말레이 반도의 끝에 위치한 섬나라이자 항구 도시로 이루어진 도시 국가입니다.");
+            break;
+
+        case 4:
+            Console.WriteLine("태국은 중국문화, 말레이문화, 불교문화, 힌두문화, 이슬람 문화가 혼재되어 있습니다.\n불교적인 모습을 많이 띄지만, 문화 자체는 색다르고 스펙트럼이 넓은 형태를 띄고 있어요.");
+            break;
+
+        default:
+            Console.WriteLine("1~4 의 숫자를 입력해주세요.");
+            break;
+    }
+}
+else
+{
+    Console.WriteLine("숫자가 아닙니다.");
+} 
+
+```
+
+# 오늘 내용 중 기억해야 할 것
+
+switch case default 의 사용으로 if문보다 특정 조건에서는 훨씬 편하고 쉽게 조건문을 구성할수 있다는 것을 배웠습니다.
+
+fall through를 막기 위해 break를 왜 계속 사용 해 주어야 하는지 추가로 공부했습니다.
+
+</details>
+
+<details>
+<summary>:no_entry: 7. 이름 찾기! </summary>
+
+```C++
+
+bool namecheck;
+
+do
+{
+
+    Console.WriteLine("이름을 입력해주세요. (3~10글자)");
+
+    string name = Console.ReadLine();
+
+    int namelength = name.Length;
+
+    if (namelength < 3 || namelength > 10)
+    {
+        Console.Clear();
+        Console.WriteLine("이름을 확인해주세요.");
+
+
+    }
+    else
+    {
+        Console.WriteLine("안녕하세요! 제 이름은 " + name + " 입니다.");
+    }
+
+    namecheck = namelength < 3 || namelength > 10;
+
+} while (namecheck);
+
+```
+
+# 오늘 내용 중 기억해야 할 것
+
+do-while 구문의 사용법에 대해 배웠습니다. 
+
+while 문 과의 차이점을 찾아보고 공부했습니다.
+
+두 구문 다 무한 루프나 조건을 만족할때까지 반복하는데에 유용하게 사용하면 될 것 같습니다.
+
+Console.Clear(); 기능도 처음 써보는데 콘솔이 깔끔해져서 좋은거 같습니다. 다만 순서를 잘 정해줘야 할 것 같습니다. 
+
+</details>
+
