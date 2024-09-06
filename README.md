@@ -96,4 +96,109 @@ Console.WriteLine($"{result_1}, {result_2}, {result_3}, {result_4}");
 산술 연산 말고도 논리 연산에서의 우선 순위도 추가적으로 알아봐야 할 것 같습니다.
 
 </details>
+<details>
+<summary>3. 본격 프로그래밍 시작해보기 </summary>
 
+```C++
+// 1. 입력받은 데이터가 숫자인지 문자열인지 판단
+
+using System.ComponentModel;
+
+string input = Console.ReadLine();
+
+int a;
+
+bool logic = int.TryParse(input, out a);
+
+if (logic)
+{
+    Console.WriteLine("숫자입니다.");
+} else
+{
+    Console.WriteLine("문자열입니다.");
+}
+
+//2.입력받은 데이터가 숫자인지 문자열인지 불리언인지 판단
+
+string input2 = Console.ReadLine();
+
+int b;
+bool c;
+
+if (c = int.TryParse(input2, out b))
+{
+    Console.WriteLine("숫자입니다.");
+} 
+
+else if (c = bool.TryParse(input2, out c))
+{
+    Console.WriteLine("불리언입니다.");
+}
+else
+{
+    Console.WriteLine("문자열입니다.");
+}
+
+// 3. 입력받은 데이터가 숫자라면 100 보다 큰지 작은지 알려주는 프로그램 만들기
+
+string input3 = Console.ReadLine();
+
+int d;
+
+bool logic2 = int.TryParse(input3, out d);
+
+if (!logic2)
+{
+    Console.WriteLine("숫자가 아닙니다.");
+}
+else
+{
+    if (d >= 100)
+    {
+        Console.WriteLine(d + "은(는) 100 보다 같거나 큰 수 입니다.");
+    }
+    else
+    {
+        Console.WriteLine(d + "은(는) 100 보다 작은 수 입니다."); 
+    }
+}
+
+// 4. 입력받은 데이터가 숫자라면 짝수인지 홀수인지 알려주는 프로그램 만들기
+
+string input4 = Console.ReadLine();
+
+int f;
+
+bool logic3 = int.TryParse(input3, out f);
+
+if (!logic3)
+{
+    Console.WriteLine("숫자가 아닙니다.");
+}
+else
+{
+    if (f % 2 == 0)
+    {
+        Console.WriteLine(f + "은(는) 짝수 입니다."); 
+    }
+    else if (f % 2 != 0)
+    {
+        Console.WriteLine(f + "은(는) 홀수 입니다.");
+    }
+}
+
+// 5.  언제 if 를 쓰고 언제 case 를 쓸까요?
+// 조건이 상수가 아닌 연산이거나 변수일때 if , 상수 값일때 case를 사용해야 할 것 같습니다.
+```
+
+# 오늘 내용 중 기억해야 할 것
+
+case를 사용하면 break 를 사용 해 주어야 하고, case 의 조건을 상수 값으로 두어야 한다는 것 , 따라서 다음 case 조건에는 이전에 사용했던 상수를 사용 할 수 없음
+
+else if 에 비해 case 의 경우 조건식을 전부 계산하지 않기 때문에 처리속도가 더 빠르지 않을까 싶습니다.
+
+코드가 지저분해서 간소화 시키는 연습을 해야 할 것 같습니다.
+
+* 위에 "숫자" 는 정수에 한정해서 작성했습니다, 소수가 입력 되었을 때에도 문자가 아닌 숫자로 판단할 수 있게 더 공부 해야 할 것 같습니다.
+
+</details>
